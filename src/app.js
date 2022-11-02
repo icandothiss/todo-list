@@ -11,6 +11,9 @@ filterOption.addEventListener("change", filterTodo);
 
 function addTodo(event) {
   event.preventDefault();
+  if (todoInput.value === "") {
+    return;
+  }
   // to do DIV
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
