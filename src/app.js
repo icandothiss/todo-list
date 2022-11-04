@@ -179,8 +179,10 @@ function removeStorageTodos(element) {
   }
   // swapping targeted items with random word
   for (let i = 0; i < index.length; i++) {
-    todos.splice(index[i], 1, "cute");
+    todos.splice(index[i], 1, "");
   }
-
+  console.log(todos);
+  let result = todos.filter((word) => word !== "");
+  todos = result;
   localStorage.setItem("todos", JSON.stringify(todos));
 }
