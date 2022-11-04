@@ -22,7 +22,7 @@
         <i class="fa-solid fa-plus"></i>
       </button>
       <div class="select">
-        <select name="todos" class="filter-todo">
+        <select class="filter-todo">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
@@ -30,7 +30,10 @@
       </div>
     </form>
     <div class="todo-container">
-      <ul class="todo-list"></ul>
+      <ul class="todo-list" id="todo-list"></ul>
+    </div>
+    <div class="DeleteAll">
+      <button id="deleteButton" class="button-5" role="button">Delete ALl</button>
     </div>
     <script src="./app.js"></script>
   </body>
