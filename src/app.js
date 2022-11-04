@@ -144,6 +144,7 @@ function removeLocalTodos(todo) {
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
+  //delete todos one by one
   indexes = todo.children[0].innerText;
   todos.splice(todos.indexOf(indexes), 1);
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -168,20 +169,19 @@ function removeStorageTodos(element) {
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
-
-  let completed = [];
+  //get the index of the targeted element for deletion
   let index = [];
   for (let i = 0; i < element.length; i++) {
     if ([...element[i].classList].includes("completed")) {
-      completed.push(element[i]);
       index.push(i);
     }
   }
-  // swapping targeted items with random word
+  // swapping targeted items with empty string
   for (let i = 0; i < index.length; i++) {
     todos.splice(index[i], 1, "");
   }
   console.log(todos);
+  // filter targeted items from empty
   let result = todos.filter((word) => word !== "");
   todos = result;
   localStorage.setItem("todos", JSON.stringify(todos));
